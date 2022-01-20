@@ -40,7 +40,7 @@ var app = new Vue({
 				email: this.form_email
 			});
 			*/
-			this.form.msg = "Thank you for your submission!"
+			this.form.msg = "Thanks for your interest, we'll be in touch."
 
 		},
 		clearContactFormMsg() {

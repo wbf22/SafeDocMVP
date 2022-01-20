@@ -3,7 +3,7 @@ html {
 	height: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	font: 30px 'curlz MT', 'freestyle script', serif;
+	font: 30px serif;
 	background-color: #f3f3f3d7;
 	color: navy;
 }
@@ -101,21 +101,25 @@ a {
 
 #survey-section {
 	min-height: 25vh;
-	margin: 0;
+	margin: auto;
 	text-align: center;
 	background: #a6e5f5;
 	border-top: 5px navy solid;
 	border-bottom: 5px navy solid;
+	
+	
 }
 
 #survey-link {
-	text-decoration: transparent;
-	color: navy;
+	text-decoration: underline;
+	color: #ff591c;
 	transition: color .3s, text-decoration .5s;
+	font-size: 45px;
+
 }
 
 #survey-link:hover {
-	color: #ff591c;
+	color: navy;
 	text-decoration: underline;
 }
 
@@ -191,5 +195,5 @@ input {
 
 #form_msg {
 	font-weight: bold;
-	color: #ff591c;
+	color: navy;
 }
