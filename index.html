@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+		<link rel="icon" type="image/png" href="./assets/papers.png" />
+
+    <title>Company Name</title>
+  </head>
+	
+  <body>
+		<!-- CONTAINER OBJECT FOR VUE JAVASCRIPT -->
+		<div id="app">
+
+			<!-- NAVIGATION BAR AT TOP OF PAGE -->
+			<div id="nav">
+
+				<div id="nav-logo">
+					<a id="link-logo" href="index.html">
+						<img id="nav-logo-img" src="./assets/papers.png" />
+						<p id="nav-logo-name">Company Name</p>
+					</a>
+				</div>
+
+				<div id="nav-spacer">
+					<p></p>
+				</div>
+
+				<div id="nav-bar">
+					<ul id="nav-bar-links">
+						<li id="nav-bar-link-item"><a id="nav-bar-link-item" href="#">Home</a></li>
+						<li id="nav-bar-link-item"><a id="nav-bar-link-item" href="https://docs.google.com/forms/d/e/1FAIpQLScK69REqzxfY56LvA0i0aNKxaKaS9-uKf-9i7oLhrDLGM4K3w/viewform?embedded=true" target="_blank">Survey</a></li>
+						<li id="nav-bar-link-item"><a id="nav-bar-link-item" href="#">Contact</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<!-- MAIN BODY OF WEBSITE -->
+			<div id="main">
+				
+				<!-- FIRST BACKGROUND IMAGE SECTION WITH COMPANY INFO FLOATER -->
+				<div id="landing-section" class="parallax">
+					<br>
+					<div id="bg-box">
+						<h1 id="landing-focus">Company Name</h1>
+						<h2>Description of Company</h2>
+					</div>
+				</div>
+
+				<!-- SURVEY BANNER SEPARATING PARALLAX BACKGROUNDS -->
+				<div id="survey-section">
+					<a id="survey-link" 	href="https://docs.google.com/forms/d/e/1FAIpQLScK69REqzxfY56LvA0i0aNKxaKaS9-uKf-9i7oLhrDLGM4K3w/viewform?embedded=true" target="_blank">
+					Take our Survey</a>
+					<!--
+					<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScK69REqzxfY56LvA0i0aNKxaKaS9-uKf-9i7oLhrDLGM4K3w/viewform?embedded=true" width="640" height="1559" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+					-->
+				</div>
+
+				<!-- SECOND BACKGROUND IMAGE SECTION WITH CONTACT FORM -->
+				<div id="contact-section" class="parallax">
+					<br>
+					<div id="bg-box">
+						<form id="contact-form">
+							<span id="form-label">Give us your info!</span> <br>
+							
+							<input id="form-fname" class="form-input" type="text" placeholder="First Name" v-model="form.fname" @click="clearContactFormMsg" /> <br>
+							<input id="form-lname" class="form-input" type="text" placeholder="Last Name" v-model="form.lname" @click="clearContactFormMsg" /> <br>
+							<input id="form-email" class="form-input" type="text" placeholder="Email" v-model="form.email" @click="clearContactFormMsg" /> <br>
+
+							<input id="form-submit" class="form-button" type="submit" value="Submit" @click.prevent="submitContactForm" />
+							<input id="form-reset" class="form-button" type="reset" value="Clear" @click="clearContactFormMsg" /> <br>
+							<span id="form_msg" v-if="form.msg != ''">{{ form.msg }}</span>
+						</form>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- FOOTER AT BOTTOM OF WEBPAGE -->
+			<div id="footer">
+
+			</div>
+
+		</div>
+    
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+		<script type="text/javascript" src="./app.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
+
+  </body>
+</html>
