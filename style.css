@@ -1,199 +1,21 @@
-html {
-	margin: 0;
-	height: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	font: 30px serif;
-	background-color: #f3f3f3d7;
-	color: navy;
-}
-
 body {
-	margin: 0;
-	height: 100%;
+    background-color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #8b8b8b;
 }
 
-a {
-	text-decoration: none;
-	color: navy;
-}
-
-/*
-	NAVIGATIONAL ELEMENTS
-*/
-
-#nav {
-	background: linear-gradient(to left, #ff591c, #a6e5f5);
-	position: fixed;
-	display: flex;
-	top: 0;
-	width: 100vw;
-	height: 10vh;
-	border-bottom: 5px solid navy;
-	z-index: 10;
-}
-#nav-logo {
-	width: 30vw;
-	min-width: 450px;
-	position: relative;
-}
-#link-logo {
-	display: flex;
-}
-#nav-logo-img {
-	margin-left: 10px;
-	height: 10vh;
-}
-
-#nav-logo-name {
-	margin: 0;
-	margin-left: 10px;
-	font-size: 6vh;
-}
-
-#nav-spacer {
-	width: 35vw;
-}
-
-#nav-bar {
-	display: flex;
-	right: 0;
-	float: right;
-}
-
-#nav-bar-links {
-	align-self: center;
-	list-style-type: none;
-}
-
-#nav-bar-link-item {
-	display: inline-block;
-	margin-right: 10px;
-	font-weight: bold;
-	padding: 2px 15px 2px 15px;
-	text-decoration: transparent;
-	color: navy;
-	transition: color .3s, text-decoration .5s;
-}
-
-#nav-bar-link-item:hover {
-	color: #a6e5f5;
-	text-decoration: underline;
-}
-
-/*
-	MAIN BODY ELEMENTS
-*/
-#main {
-	margin-top: 10vh;
-	height: 100vh;
-	width: 100vw;
-}
-
-
-#landing-section {
-	margin-top: 10vh;
-	height: 100vh;
-	width: 100%;
-	background-image: url("assets/landing-backsplash.png");
-	background-color: #a6e5f5;
-}
-
-#survey-section {
-	min-height: 25vh;
-	margin: auto;
-	text-align: center;
-	background: #a6e5f5;
-	border-top: 5px navy solid;
-	border-bottom: 5px navy solid;
-	
-	
-}
-
-#survey-link {
-	text-decoration: underline;
-	color: #ff591c;
-	transition: color .3s, text-decoration .5s;
-	font-size: 45px;
-
-}
-
-#survey-link:hover {
-	color: navy;
-	text-decoration: underline;
-}
-
-#contact-section {
-	height: 100vh;
-	width: 100%;
-	background-image: url("assets/contact-backsplash.jpg");
-	background-color: #a6e5f5;
-}
-
-#bg-box {
-	background: linear-gradient(to left, #ff591c, #a6e5f5);
-	margin: 15vh 25vw 45vh 25vw;
-	width: 50vw;
-	height: 40vh;
-	border-radius: 50px;
-	border: 5px navy solid;
-	opacity: .90;
-}
-
-/* #bg-box:hover {
-	background: linear-gradient(to right, #ff591c, #868ff1);
-} */
-
-.parallax {
-	background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-
-/*
-	ELEMENTAL STYLING
-*/
-p {
-	margin: 0;
-}
 h1 {
-	margin: 0;
-	text-align: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 3px;
+    box-sizing: border-box;
 }
+
+
 h2 {
-	margin: 0;
-	text-align: center;
-}
-form {
-	text-align: center;
-}
-input {
-	
-}
-#form-label {
-	font-weight: bold;
+    padding: 20px;
+    margin-left: 40px;
 }
 
-.form-input {
-	padding-left: 10px;
-	min-width: 250px;
-	border: 2px navy solid;
-	border-radius: 15px;
-	background-color: #d4f4fc;
-	color: #ff591c;
-	font-weight: bold;
-}
-.form-button {
-	border: 2px navy solid;
-	border-radius: 15px;
-	background-color: #d4f4fc;
-	color: #ff591c;
-	font-weight: bold;
-}
 
-#form_msg {
-	font-weight: bold;
-	color: navy;
-}
