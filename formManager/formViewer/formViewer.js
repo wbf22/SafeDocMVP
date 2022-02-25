@@ -6,11 +6,12 @@ var app = new Vue({
     el: '#app',
     data: {
         cntr: 0,
+        title: "Sexual Misconduct",
         questions: [
-            {
-                id: 0,
-                text: ""
-            }
+            "When did the event occur?",
+            "Name of offender if known",
+            "List witnesses",
+            "Description of Event"
         ],
     }, 
     methods: {

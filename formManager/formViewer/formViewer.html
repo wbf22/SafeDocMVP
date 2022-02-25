@@ -4,9 +4,7 @@
         <title>SecureDoc</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="../../master.css">
-        <link rel="stylesheet" href="formMaker.css">
-        
-        
+        <link rel="stylesheet" href="formViewer.css">
     </head>
 
     <body>
@@ -43,22 +41,19 @@
 
         <div class="form">
           <div class="formTitle">
-            <input type="text" id="titleBox" class="inputBox" placeholder="Form Title">
-          </div>
+            <h1 v-text="title" class="h1_nonWhite"></h1>         
+         </div>
 
           <div id="questions" class="questionSection">
 
             <div class="question" v-for="q in questions">
-              <input type="text" class="inputBox" placeholder="Question" v-model="q.text">
+              <p v-text="q"></p>
+              <input type="text" class="inputBox" placeholder="Answer">
             </div>
 
 
           </div>
           
-
-          <button id="newQuestion" class="btn btn-outline-primary" @click="addQuestion()">New Question</button>
-          <button id="save" class="btn btn-outline-primary" @click="save()">Save</button>
-
         </div>
         
       </div>
@@ -79,7 +74,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-      <script src="formMaker.js"></script>
+      <script src="formViewer.js"></script>
     </body>
 
 </html>

@@ -1,3 +1,11 @@
+html, body {
+    width: 100vw;
+}
+
+input {
+    color: #8b8b8b;
+}
+
 .title {
     background-color: #6795fd;
     height: 100px;
@@ -12,7 +20,9 @@
 .title img {
     height: 100%;
 }
-
+.btn {
+    border-radius: 20px;
+}
 h1 {
     color: white;
     text-align: center;
@@ -26,38 +36,47 @@ h2 {
     padding: 20px;
     margin-left: 40px;
 }
-
-.caseName {
-    margin: auto;
+.caseSection {
+    background-color: inherit;
     text-align: center;
-    padding: 5px;
+    position: sticky;
+    top: 0;
+    height: 10vh;
+    width: 100vw;
+    border-bottom: 3px solid #8b8b8b;
 }
 
+.caseName {
+    display: inline-block;
+    color: #8b8b8b;
+    border: none;
+}
+
+.caseName option {
+    font-size: .5em;
+}
+.col {
+    margin: 1em;
+}
 
 .caseData {
-    width: 100%;
-    height: 800px;
-    margin: auto;
-    border-radius: 3px;
-    border-width: 3px;
-    border-color: #8f8f8f;
-    border-style: solid;
+    height: 90vh;
+    overflow-y: auto;
 }
 
 .doc {
     max-width: 100%;
-    height: 15%;
-    padding: 2%;
-    margin: 2%;
-    border-radius: 10px;
-
+    margin: 1em 2%;
+    border-radius: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transition: ease-in-out .2s;
 }
 
 .doc:hover {
     background-color: rgba(204, 204, 204, 0.699);
+    color: white;
 
 }
 

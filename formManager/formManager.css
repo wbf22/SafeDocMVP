@@ -63,7 +63,8 @@ h1 {
     border-radius: 10px;
 
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 
     background-color: rgba(204, 204, 204, 0.699);
 }
