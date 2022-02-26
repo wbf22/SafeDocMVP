@@ -38,3 +38,17 @@ var app = new Vue({
 })
 
 
+
+var loggedInCheck = function () {
+    // This function is anonymous, is executed immediately and 
+    // the return value is assigned to QueryString!
+    var query = window.location.search.substring(1);
+    console.log(query)
+    if (query != "IFj4dkwo820" && query != "8IFj30sJFDD"){
+        window.location.href = '../login/login.html?formManager'//?sharedData=' + questionsText;
+    }
+    document.getElementById("CM").href = "../../caseManager/caseManager.html?" + query
+    document.getElementById("FM").href = "../../formManager/formManager.html?" + query
+    return query_string;
+}();
+

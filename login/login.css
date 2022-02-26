@@ -1,0 +1,135 @@
+body {
+    background-color: #f1f1f1;
+}
+
+.menu_section {
+    background-color: #ffffff;
+}
+
+.title {
+    background-color: #6795fd;
+    height: 100px;
+    width: 100%;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.title img {
+    height: 100%;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.h1_nonWhite {
+    color: #8f8f8f;
+}
+
+.h2_nonWhite {
+    color: #cecece;
+}
+
+.h2_nonWhiteSet {
+    color: #5d5d5d;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10%;
+}
+
+.formTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ffffff;
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+}
+
+.formTitle .inputBox {
+    width: 40%;
+    margin-left: 0%;
+}
+
+.questionSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 50%;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 3px;
+    padding: 10px;
+
+    margin-top: 10px;
+}
+
+.inputBox {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(219, 219, 219, 0.733);
+    height: 40px;
+    width: 50%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    width: 100%;
+    height: 50px;
+    position:fixed;
+    bottom: 0px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(204, 204, 204, 0.699);
+}
+
+.footer a {
+    padding: 10px;
+    color: #4b4b4b;
+}

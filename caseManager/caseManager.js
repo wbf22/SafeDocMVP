@@ -51,8 +51,12 @@ var app = new Vue({
             
             this.selectedCase = id
             this.newCase = ''
+        },
+        removeDocs() {
+            let newDocs = []
+            newDocs.push(this.cases[0].docs[2])
+            this.cases[0].docs = newDocs
         }
-
     },
     created() {
         // TODO: Access back end and populate data
@@ -62,3 +66,21 @@ var app = new Vue({
 function strip_filepath(filepath) {
     return filepath.slice(filepath.lastIndexOf('\\')+1)
 }
+
+
+var loggedInCheck = function () {
+    // This function is anonymous, is executed immediately and 
+    // the return value is assigned to QueryString!
+    var query = window.location.search.substring(1);
+    console.log(query)
+    if (query != "IFj4dkwo820" && query != "8IFj30sJFDD"){
+        window.location.href = '../login/login.html?caseManager'//?sharedData=' + questionsText;
+    }
+    document.getElementById("CM").href = "caseManager.html?" + query
+    document.getElementById("FM").href = "../formManager/formManager.html?" + query
+
+    //cheese to make less documents appear for the 'user' login
+    if (query == "8IFj30sJFDD") app.removeDocs()
+
+    return query_string;
+}();
