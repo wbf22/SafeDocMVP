@@ -5,6 +5,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="../master.css">
         <link rel="stylesheet" href="caseManager.css">
+
+        <link rel="icon" href="../assets/papers-6795fd.png" type="image/png" />
     </head>
 
     <body>
@@ -41,34 +43,58 @@
                 <p>My Docs</p>
             </h2>
             
-            <h1 class="caseSection">
-                <button class="btn btn-outline-primary" data-toggle="modal" data-target="#new-doc-modal" style="position: absolute; left: 15vw;">Create</button>
-                <div>
-                    <select id="caseList" class="caseName" v-model="selectedCase">
-                        <option v-for="c in cases" :value="c.id">{{ c.name }}</option>
-                        
-                    </select>
-                    <button class="btn btn-outline-primary" data-toggle="modal" data-target="#new-case-modal" style="position: absolute; margin-left: 15px;">New Case</button>
+            <div class="row caseSection">
+                <div class="col">
+                    <button class="btn btn-outline-primary" data-toggle="modal" data-target="#new-doc-modal">Upload Document</button>
                 </div>
-            </h1>
+                <div class="col">
+                    <button class="btn btn-outline-primary" data-toggle="modal" data-target="#new-case-modal">New Case</button>
+                </div>
+                <div class="col">
+                    <div class="dropdown">
+                        <button id="caseList" v-if="selectedCase >= 0" class="btn btn-outline-secondary dropdown-toggle caseName" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ cases[selectedCase].name }}</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#" v-for="c in cases" :value="c.id" @click="selectCase(c.id)">{{ c.name }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <button v-if="cases[selectedCase]" class="btn btn-outline-warning" @click="closeCase()">Close Case</button>
+                </div>
+                <div class="col">
+                    <span v-if="cases[selectedCase]" >Exipres in:</span>
+                    <p v-if="cases[selectedCase]" v-bind:class="{ expiring: cases[selectedCase].expiration < 7 }">{{ cases[selectedCase].expiration }} days</p>
+                </div>
+            </div>
 
             <div class="caseData">
-                <div v-if="selectedCase != null && cases.length > 0">
+                <div v-if="cases.length > 0">
+                    <!-- <div class="row justify-content-center">
+                        <div class="col" style="text-align: center;">
+                            <h2 style="text-decoration: underline;">Docs</h2>
+                        </div>
+                        
+                        <div class="col" style="text-align: center;">
+                            <h2 style="text-decoration: underline;">Filename</h2>
+                        </div>
+                    </div> -->
 
-                    <div class="row justify-content-center doc" v-for="doc in cases[selectedCase].docs">
+                    <div class="row justify-content-center doc" v-if="cases.length > 0 && (!doc.admin || token=='IFj4dkwo820')" v-for="doc in cases[selectedCase].docs">
                         <div class="col" style="text-align: center;">
                             <img src="../assets/doc.png" alt="" style="max-width: 60px;">
                         </div>
                         <!-- doc icon is using color #6795fd -->
                         <div class="col" style="text-align: center;">
-                            {{ doc }}
+                            {{ doc.file_name }}
                         </div>
                         <div class="col" style="text-align: center;">
-                            <div class="approval">
-                                <p>Approval:</p>
-                                <img src="../assets/check.png" alt="" style="max-width: 30px;">
-                            </div>
+                            <button class="btn btn-outline-danger deleteIcon" style="float: right; margin-right: 5em;" @click="removeDocument(doc.id)">X</button>
                         </div>
+                    </div>
+                </div>
+                <div class="row" v-else>
+                    <div class="col">
+                        Create a new Case to get started
                     </div>
                 </div>
             </div>
@@ -99,6 +125,8 @@
                                     <label id="upload-file-label" class="custom-file-label" for="upload-file-form" >Choose file</label>
                                 </div>
                             </div>
+                            <input type="checkbox" v-model="newDocAdmin" id="newDocAdmin"style="margin-left: 1em;">
+                            <label for="newDocAdmin" style="vertical-align: middle;">For Admin Only?</label>
                         </div>
                         <!-- <div class="modal-footer">
                             <button type="button" class="btn btn-primary">Create</button>
@@ -111,16 +139,18 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="modal-case-title">Create New Document</h5>
+                            <h5 class="modal-title" id="modal-case-title">Create New Case</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                             <input type="text" v-model="newCase" value="" placeholder="Name your case"/>
+                            <br>
+                            <input type="number" v-model="newCaseExp" min="0" style="margin-top: 1em;"/>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" data-dismiss="modal" class="btn btn-primary" @click="addNewCase()">Create</button>
+                            <button type="button" data-dismiss="modal" class="btn btn-primary" @click="addCase()">Create</button>
                         </div>
                     </div>
                 </div>

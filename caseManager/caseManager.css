@@ -37,11 +37,11 @@ h2 {
     margin-left: 40px;
 }
 .caseSection {
-    background-color: inherit;
+    background-color: white;
     text-align: center;
     position: sticky;
     top: 0;
-    height: 20vh;
+    height: 10vh;
     width: 100vw;
     border-bottom: 3px solid #8b8b8b;
 }
@@ -50,6 +50,22 @@ h2 {
     display: inline-block;
     color: #8b8b8b;
     border: none;
+    font-size: 1.5em;
+}
+
+.caseName:hover {
+    color: #8b8b8b;
+    border: none;
+    background-color: transparent;
+}
+
+.dropdown-item {
+    color: #8b8b8b;
+}
+
+.dropdown-item:hover {
+    background-color: #8b8b8b;
+    color: white;
 }
 
 .caseName option {
@@ -57,16 +73,18 @@ h2 {
 }
 .col {
     margin: 1em;
+    text-align: center;
 }
 
 .caseData {
+    padding: 0 2em;
     height: 90vh;
     overflow-y: auto;
 }
 
 .doc {
     max-width: 100%;
-    margin: 1em 2%;
+    margin: 1em;
     border-radius: 20px;
     display: flex;
     justify-content: space-around;
@@ -74,9 +92,18 @@ h2 {
     transition: ease-in-out .2s;
 }
 
+.deleteIcon {
+    display: none;
+}
+
+.doc:hover .deleteIcon {
+    display: block;
+}
+
 .doc:hover {
     background-color: rgba(204, 204, 204, 0.699);
     color: white;
+    cursor: pointer;
 
 }
 
@@ -111,4 +138,8 @@ h2 {
 .footer a {
     padding: 10px;
     color: #4b4b4b;
+}
+
+.expiring {
+    color: red;
 }
